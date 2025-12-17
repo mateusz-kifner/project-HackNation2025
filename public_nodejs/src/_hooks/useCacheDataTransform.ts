@@ -66,9 +66,7 @@ export type Level = "sektor" | "group";
 async function fetchData(pkds: string[]) {
 	const pending = pkds.map(async (pkd) => {
 		try {
-			const res = await fetch(
-				`https://mateusz-kifner.github.io/project-HackNation2025/db_static/${pkd}.json`,
-			);
+			const res = await fetch(`/project-HackNation2025/db_static/${pkd}.json`);
 			const data = await res.text();
 			const json = await JSON.parse(data);
 			return json;
